@@ -48,4 +48,4 @@ I am Sergey Lyubka, a software engineer from Galway, Ireland. I started
 working on Mongoose in 2004, and since then continuously improve it,
 investing thousands of hours of work. My other project I'm contributing to the
 community for free is
-[Super Light Regular Expression library](http://code.google.com/p/slre).
+[Super Light Regular Expression library](https://github.com/cesanta/slre).
