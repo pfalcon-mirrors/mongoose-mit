@@ -4121,7 +4121,7 @@ static void read_websocket(struct mg_connection *conn) {
 
       // Exit the loop if callback signalled to exit,
       // or "connection close" opcode received.
-      if ((bits & WEBSOCKET_OPCODE_CONNECTION_CLOSE) ||
+      if (((bits & 0x0F) == WEBSOCKET_OPCODE_CONNECTION_CLOSE) ||
           (conn->ctx->callbacks.websocket_data != NULL &&
            !conn->ctx->callbacks.websocket_data(conn, bits, data, data_len))) {
         stop = 1;
