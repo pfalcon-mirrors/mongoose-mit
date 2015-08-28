@@ -4200,7 +4200,7 @@ static void handle_websocket_request(struct mg_connection *conn) {
   }
 }
 
-static int is_websocket_request(const struct mg_connection *conn) {
+int mg_is_websocket_request(const struct mg_connection *conn) {
   const char *host, *upgrade, *connection, *version, *key;
 
   host = mg_get_header(conn, "Host");
@@ -4449,7 +4449,7 @@ static void handle_request(struct mg_connection *conn) {
       conn->ctx->callbacks.begin_request(conn)) {
     // Do nothing, callback has served the request
 #if defined(USE_WEBSOCKET)
-  } else if (is_websocket_request(conn)) {
+  } else if (mg_is_websocket_request(conn)) {
     handle_websocket_request(conn);
 #endif
   } else if (!strcmp(ri->request_method, "OPTIONS")) {
