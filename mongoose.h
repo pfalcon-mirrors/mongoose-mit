@@ -231,6 +231,13 @@ enum {
   WEBSOCKET_OPCODE_PONG = 0xa
 };
 
+// Check whether request is a websocket request
+//
+// Return:
+//  1   request is a websocket request
+//  0   request is not a websocket request
+int mg_is_websocket_request(const struct mg_connection *conn);
+
 
 // Macros for enabling compiler-specific checks for printf-like arguments.
 #undef PRINTF_FORMAT_STRING
